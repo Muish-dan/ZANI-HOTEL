@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zani Hotel</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    section {
+      padding: 80px 20px;
+    }
+    .fullscreen {
+      height: 100vh;
+      background-image: url('ppp.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gold;
+      font-size: 5em;
+      text-shadow: 2px 2px 4px black;
+    }
+    .form-group, .room, .menu-item, .drink-item {
+      margin: 1em 0;
+    }
+    input, select, button {
+      padding: 0.5em;
+      margin: 0.2em;
+    }
+    img {
+      width: 200px;
+      height: auto;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#booking-form">Booking Form</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#menu">Food Menu</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#guests">Guest Records</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <section id="home" class="fullscreen">
+    <div>Welcome to Zani Hotel</div>
+  </section>
+
+  <section id="booking-form">
+  <h2>Book Your Stay</h2>
+  <form id="bookingForm">
+    <div class="form-group">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="text" name="idnumber" placeholder="ID Number" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <select name="gender" required>
+        <option value="">Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <select name="room" required>
+        <option value="">Select Room Type</option>
+        <option value="Single Room">Single Room - $50/night</option>
+        <option value="One Bedroom">One Bedroom - $80/night</option>
+        <option value="Two Bedroom">Two Bedroom - $120/night</option>
+        <option value="Suite Room">Suite Room - $200/night</option>
+      </select>
+      <input type="date" name="checkin" required>
+      <input type="date" name="checkout" required>
+    </div>
+    <button type="submit">Submit Booking</button>
+  <h2>Order Food</h3>
+  <select name="food" multiple size="5">
+    <option value="Chicken Curry">Chicken Curry - $15</option>
+    <option value="Beef Stew">Beef Stew - $12</option>
+    <option value="Fried Fish">Fried Fish - $14</option>
+    <option value="Vegetable Rice">Vegetable Rice - $10</option>
+    <option value="Spaghetti Bolognese">Spaghetti Bolognese - $13</option>
+  </select>
+
+  <h2>Order Drinks</h3>
+  <select name="drinks" multiple size="5">
+    <option value="Juice">Juice - $3</option>
+    <option value="Soda">Soda - $2</option>
+    <option value="Tea">Tea - $1.5</option>
+    <option value="Coffee">Coffee - $2.5</option>
+    <option value="Beer">Beer - $4</option>
+  </select>
+
+  <button type="submit">Book Now</button>
+</form>
+
+</section>
+  <section id="rooms">
+    <h2>Book a Room</h2>
+    <div class="flex">
+      <div class="room">
+        <img src="single.jpeg" alt="Single Room">
+        <p>Single Room - $50/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="one.jpeg" alt="One Bedroom">
+        <p>One Bedroom - $80/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="two.jpeg" alt="Two Bedroom">
+        <p>Two Bedroom - $120/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="three.jpeg" alt="Suite Room">
+        <p>Suite Room - $200/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>Food Menu</h2>
+    <div class="flex">
+      <div class="menu-item">
+        <img src="chicken.jpg"><p>Chicken Curry - $15</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="beef.jpg"><p>Beef Stew - $12</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="fried.jpg"><p>Fried Fish - $14</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="rice.jpg"><p>Vegetable Rice - $10</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="spha.jpg"><p>Spaghetti Bolognese - $13</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="burger.jpeg"><p>Burger - $11</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="pizza.jpeg"><p>Pizza - $16</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="gith.jpg"><p>Githeri - $9</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="nyama.jpg"><p>Nyama Choma - $17</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="beans.jpg"><p>Chapati Beans - $8</p><button>Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="drinks">
+    <h2>Drinks</h2>
+    <div class="flex">
+      <div class="drink-item">
+        <img src="juice.jpg"><p>Juice - $3</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="soda.jpg"><p>Soda - $2</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="tea.jpg"><p>Tea - $1.5</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="coffee.jpg"><p>Coffee - $2.5</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="beer.jpg"><p>Beer - $4</p><button>Buy</button>
+      </div>
+    </div>
+  </section>
+
+ <section id="guests">
+  <h2>Guest Records</h2>
+  <button id="clearGuests" style="margin-bottom: 1em;">Clear Guest List</button>
+  <ul id="guestList">
+    <!-- Guests will be listed here dynamically -->
+  </ul>
+</section>
+
+
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@zanihotel.com</p>
+	      muishdan@gmail.com</p>
+    <p>Phone: +254 712 345 678</p>
+	      +247 724 280 587</p>
+    <p>Thank you for visiting our hotel!</p>
+    <div class="flex">
+      <img src="res.jpeg">
+      <img src="swimming.jpeg">
+      <img src="view.jpeg">
+    </div>
+  </section>
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    const form = event.target;
+    const fullName = form.fullname.value.trim();
+    const idNumber = form.idnumber.value.trim();
+    const phone = form.phone.value.trim();
+    const email = form.email.value.trim();
+    const gender = form.gender.value;
+
+    // Create guest record text
+    const guestText = `${fullName} - Phone: ${phone}, ID: ${idNumber}, Email: ${email}, Gender: ${gender}`;
+
+    // Add to guest list
+    const guestList = document.getElementById('guestList');
+    const li = document.createElement('li');
+    li.textContent = guestText;
+    guestList.appendChild(li);
+
+    // Reset form
+    form.reset();
+
+    // Scroll to guest section
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop form from refreshing the page
+
+    const form = event.target;
+
+    // Collect form data
+    const fullName = form.fullname.value.trim();
+    const idNumber = form.idnumber.value.trim();
+    const phone = form.phone.value.trim();
+    const email = form.email.value.trim();
+    const gender = form.gender.value;
+    const room = form.room.value;
+    foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+    drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+
+    // Create guest entry
+    const guestText = `${fullName} - ${room} - Phone: ${phone}, ID: ${idNumber}, Email: ${email}, Gender: ${gender},Food: ${foodList} | Drinks: ${drinkList}`;
+
+    // Add guest to list
+    const guestList = document.getElementById('guestList');
+    const li = document.createElement('li');
+    li.textContent = guestText;
+    guestList.appendChild(li);
+
+    // Reset the form
+    form.reset();
+
+    // Scroll to Guest section
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+<script>
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const fullName = form.fullname.value.trim();
+    const idNumber = form.idnumber.value.trim();
+    const phone = form.phone.value.trim();
+    const email = form.email.value.trim();
+    const gender = form.gender.value;
+    const room = form.room.value;
+    const checkin = form.checkin.value;
+    const checkout = form.checkout.value;
+    foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+    drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+
+    const guestText = `${fullName} - ${room} | Check-in: ${checkin} | Check-out: ${checkout} | Phone: ${phone}, ID: ${idNumber}, Email: ${email}, Gender: ${gender} Food: ${foodList} | Drinks: ${drinkList}`;
+
+    const guestList = document.getElementById('guestList');
+    const li = document.createElement('li');
+    li.textContent = guestText;
+    guestList.appendChild(li);
+
+    form.reset();
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+</script>
+<script>
+  const form = document.getElementById('bookingForm');
+  const guestList = document.getElementById('guestList');
+
+  // Load stored guests on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.forEach(guest => addGuestToList(guest));
+  });
+
+  // Form submission handler
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const guest = {
+      fullName: form.fullname.value.trim(),
+      idNumber: form.idnumber.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      gender: form.gender.value,
+      room: form.room.value,
+      checkin: form.checkin.value,
+      checkout: form.checkout.value
+      foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+      drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+    };
+
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.push(guest);
+    localStorage.setItem('guests', JSON.stringify(storedGuests));
+
+    addGuestToList(guest);
+
+    form.reset();
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Helper function to add guest to the list
+  function addGuestToList(guest) {
+    const li = document.createElement('li');
+    li.textContent = `${guest.fullName} - ${guest.room} | Check-in: ${guest.checkin} | Check-out: ${guest.checkout} | Phone: ${guest.phone}, ID: ${guest.idNumber}, Email: ${guest.email}, Gender: ${guest.gender} Food: ${foodList} | Drinks: ${drinkList}`;
+    guestList.appendChild(li);
+  }
+</script>
+<script>
+  const form = document.getElementById('bookingForm');
+  const guestList = document.getElementById('guestList');
+
+  // Load stored guests on page load
+  // Helper function to parse date string (yyyy-mm-dd) to Date object
+function parseDate(dateStr) {
+  return new Date(dateStr + 'T00:00:00'); // ensure no timezone issues
+}
+
+// Clean up guests whose checkout date is before today
+function cleanUpOldGuests() {
+  const today = new Date();
+  let guests = JSON.parse(localStorage.getItem('guests')) || [];
+  
+  guests = guests.filter(guest => {
+    const checkoutDate = parseDate(guest.checkout);
+    return checkoutDate >= today;
+  });
+
+  localStorage.setItem('guests', JSON.stringify(guests));
+  return guests;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  // Remove guests with past checkout date
+  const activeGuests = cleanUpOldGuests();
+
+  // Display the remaining guests
+  activeGuests.forEach(guest => addGuestToList(guest));
+});
+
+
+  // Form submission handler
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const guest = {
+      fullName: form.fullname.value.trim(),
+      idNumber: form.idnumber.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      gender: form.gender.value,
+      room: form.room.value,
+      checkin: form.checkin.value,
+      checkout: form.checkout.value
+      foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+      drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+    };
+
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.push(guest);
+    localStorage.setItem('guests', JSON.stringify(storedGuests));
+
+    addGuestToList(guest);
+
+    form.reset();
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Helper function to add guest to the list
+  function addGuestToList(guest) {
+    const li = document.createElement('li');
+    li.textContent = `${guest.fullName} - ${guest.room} | Check-in: ${guest.checkin} | Check-out: ${guest.checkout} | Phone: ${guest.phone}, ID: ${guest.idNumber}, Email: ${guest.email}, Gender: ${guest.gender} Food: ${foodList} | Drinks: ${drinkList}`;
+    guestList.appendChild(li);
+  }
+
+  // Clear guest list button
+  document.getElementById('clearGuests').addEventListener('click', function () {
+    if (confirm('Are you sure you want to clear all guest records?')) {
+      localStorage.removeItem('guests');
+      guestList.innerHTML = '';
+    }
+  });
+</script>
+<script>
+  const form = document.getElementById('bookingForm');
+  const guestList = document.getElementById('guestList');
+
+  // Helper function to parse date string (yyyy-mm-dd) to Date object
+  function parseDate(dateStr) {
+    return new Date(dateStr + 'T00:00:00'); // ensures no timezone issues
+  }
+
+  // Clean up guests whose checkout date is before today
+  function cleanUpOldGuests() {
+    const today = new Date();
+    let guests = JSON.parse(localStorage.getItem('guests')) || [];
+    
+    guests = guests.filter(guest => {
+      const checkoutDate = parseDate(guest.checkout);
+      return checkoutDate >= today;
+    });
+
+    localStorage.setItem('guests', JSON.stringify(guests));
+    return guests;
+  }
+
+  // Load stored guests and clean old ones on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const activeGuests = cleanUpOldGuests();
+    activeGuests.forEach(guest => addGuestToList(guest));
+  });
+
+  // Form submission handler
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const guest = {
+      fullName: form.fullname.value.trim(),
+      idNumber: form.idnumber.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      gender: form.gender.value,
+      room: form.room.value,
+      checkin: form.checkin.value,
+      checkout: form.checkout.value
+      foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+      drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+    };
+
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.push(guest);
+    localStorage.setItem('guests', JSON.stringify(storedGuests));
+
+    addGuestToList(guest);
+
+    form.reset();
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Helper function to add guest to the list
+  function addGuestToList(guest) {
+    const li = document.createElement('li');
+    li.textContent = `${guest.fullName} - ${guest.room} | Check-in: ${guest.checkin} | Check-out: ${guest.checkout} | Phone: ${guest.phone}, ID: ${guest.idNumber}, Email: ${guest.email}, Gender: ${guest.gender} Food: ${foodList} | Drinks: ${drinkList}`;
+    guestList.appendChild(li);
+  }
+
+  // Clear guest list button
+  document.getElementById('clearGuests').addEventListener('click', function () {
+    if (confirm('Are you sure you want to clear all guest records?')) {
+      localStorage.removeItem('guests');
+      guestList.innerHTML = '';
+    }
+  });
+</script>
+<script>
+  const form = document.getElementById('bookingForm');
+  const guestList = document.getElementById('guestList');
+
+  function parseDate(dateStr) {
+    return new Date(dateStr + 'T00:00:00');
+  }
+
+  function cleanUpOldGuests() {
+    const today = new Date();
+    let guests = JSON.parse(localStorage.getItem('guests')) || [];
+
+    guests = guests.filter(guest => {
+      const checkoutDate = parseDate(guest.checkout);
+      return checkoutDate >= today;
+    });
+
+    localStorage.setItem('guests', JSON.stringify(guests));
+    return guests;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const activeGuests = cleanUpOldGuests();
+    activeGuests.forEach(guest => addGuestToList(guest));
+
+    // Attach event listener to Clear Guest List button here (DOM fully loaded)
+    document.getElementById('clearGuests').addEventListener('click', function () {
+      if (confirm('Are you sure you want to clear all guest records?')) {
+        localStorage.removeItem('guests');
+        guestList.innerHTML = '';
+      }
+    });
+  });
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const guest = {
+      fullName: form.fullname.value.trim(),
+      idNumber: form.idnumber.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      gender: form.gender.value,
+      room: form.room.value,
+      checkin: form.checkin.value,
+      checkout: form.checkout.value
+      foodOrders: Array.from(form.food.selectedOptions).map(opt => opt.value),
+      drinkOrders: Array.from(form.drinks.selectedOptions).map(opt => opt.value)
+
+    };
+
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.push(guest);
+    localStorage.setItem('guests', JSON.stringify(storedGuests));
+
+    addGuestToList(guest);
+
+    form.reset();
+    document.getElementById('guests').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  function addGuestToList(guest) {
+    const li = document.createElement('li');
+li.textContent = `${guest.fullName} - ${guest.room} | Check-in: ${guest.checkin} | Check-out: ${guest.checkout} | Phone: ${guest.phone} | Food: ${foodList} | Drinks: ${drinkList}`;
+
+  }
+</script>
+</body>
+</html>

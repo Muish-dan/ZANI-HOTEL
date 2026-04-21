@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Guest Booking Form</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  form { max-width: 400px; margin-bottom: 30px; }
+  label { display: block; margin-top: 10px; }
+  input, select { width: 100%; padding: 5px; margin-top: 5px; }
+  button { margin-top: 15px; padding: 10px 15px; }
+  #guestList { margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Guest Booking Form</h1>
+
+<form id="bookingForm">
+  <label>Full Name:
+    <input type="text" name="fullname" required />
+  </label>
+  <label>ID Number:
+    <input type="text" name="idnumber" required />
+  </label>
+  <label>Phone Number:
+    <input type="tel" name="phone" required />
+  </label>
+  <label>Email:
+    <input type="email" name="email" required />
+  </label>
+  <label>Gender:
+    <select name="gender" required>
+      <option value="">--Select Gender--</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </label>
+  <label>Room Number:
+    <input type="text" name="room" required />
+  </label>
+  <label>Check-in Date:
+    <input type="date" name="checkin" required />
+  </label>
+  <label>Check-out Date:
+    <input type="date" name="checkout" required />
+  </label>
+
+  <button type="submit">Add Guest</button>
+</form>
+
+<button id="clearGuests">Clear All Guest Records</button>
+
+<h2>Active Guests</h2>
+<ul id="guestList"></ul>
+
+<script>
+  const form = document.getElementById('bookingForm');
+  const guestList = document.getElementById('guestList');
+
+  // Helper: parse YYYY-MM-DD string to Date object at midnight
+  function parseDate(dateStr) {
+    return new Date(dateStr + 'T00:00:00');
+  }
+
+  // Remove guests who checked out before today
+  function cleanUpOldGuests() {
+    const today = new Date();
+    let guests = JSON.parse(localStorage.getItem('guests')) || [];
+    guests = guests.filter(g => parseDate(g.checkout) >= today);
+    localStorage.setItem('guests', JSON.stringify(guests));
+    return guests;
+  }
+
+  // Add one guest to the visible list
+  function addGuestToList(guest) {
+    const li = document.createElement('li');
+    li.textContent = `${guest.fullName} - Room: ${guest.room} | Check-in: ${guest.checkin} | Check-out: ${guest.checkout} | Phone: ${guest.phone} | ID: ${guest.idNumber} | Gender: ${guest.gender}`;
+    guestList.appendChild(li);
+  }
+
+  // On page load: clean old guests and display current active guests
+  window.addEventListener('DOMContentLoaded', () => {
+    guestList.innerHTML = '';
+    const activeGuests = cleanUpOldGuests();
+    activeGuests.forEach(addGuestToList);
+  });
+
+  // Handle form submission
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const guest = {
+      fullName: form.fullname.value.trim(),
+      idNumber: form.idnumber.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      gender: form.gender.value,
+      room: form.room.value.trim(),
+      checkin: form.checkin.value,
+      checkout: form.checkout.value
+    };
+
+    // Save guest to localStorage
+    const storedGuests = JSON.parse(localStorage.getItem('guests')) || [];
+    storedGuests.push(guest);
+    localStorage.setItem('guests', JSON.stringify(storedGuests));
+
+    // Add guest to list on page
+    addGuestToList(guest);
+
+    // Reset form for next entry
+    form.reset();
+
+    // Scroll to guest list
+    guestList.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Clear all guests button
+  document.getElementById('clearGuests').addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear all guest records?')) {
+      localStorage.removeItem('guests');
+      guestList.innerHTML = '';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zani Hotel</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 1em;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0 10px;
+    }
+    section {
+      padding: 80px 20px;
+    }
+    .fullscreen {
+      height: 100vh;
+      background-image: url('ppp.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: gold;
+      font-size: 5em;
+      text-shadow: 2px 2px 4px black;
+    }
+    .form-group, .room, .menu-item, .drink-item {
+      margin: 1em 0;
+    }
+    input, select, button {
+      padding: 0.5em;
+      margin: 0.2em;
+    }
+    img {
+      width: 200px;
+      height: auto;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#booking-form">Booking Form</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#menu">Food Menu</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#guests">Guest Records</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <section id="home" class="fullscreen">
+    <div>Welcome to Zani Hotel</div>
+  </section>
+
+  <section id="booking-form">
+    <h2>Book Your Stay</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Full Name" required>
+        <input type="text" placeholder="ID Number" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="email" placeholder="Email" required>
+        <select required>
+          <option value="">Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <section id="rooms">
+    <h2>Book a Room</h2>
+    <div class="flex">
+      <div class="room">
+        <img src="single.jpeg" alt="Single Room">
+        <p>Single Room - $50/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="one.jpeg" alt="One Bedroom">
+        <p>One Bedroom - $80/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="two.jpeg" alt="Two Bedroom">
+        <p>Two Bedroom - $120/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+      <div class="room">
+        <img src="three.jpeg" alt="Suite Room">
+        <p>Suite Room - $200/night</p>
+        <input type="number" placeholder="Nights">
+        <button>Book</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2>Food Menu</h2>
+    <div class="flex">
+      <div class="menu-item">
+        <img src="chicken.jpg"><p>Chicken Curry - $15</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="beef.jpg"><p>Beef Stew - $12</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="fried.jpg"><p>Fried Fish - $14</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="rice.jpg"><p>Vegetable Rice - $10</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="spha.jpg"><p>Spaghetti Bolognese - $13</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="burger.jpeg"><p>Burger - $11</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="pizza.jpeg"><p>Pizza - $16</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="gith.jpg"><p>Githeri - $9</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="nyama.jpg"><p>Nyama Choma - $17</p><button>Buy</button>
+      </div>
+      <div class="menu-item">
+        <img src="beans.jpg"><p>Chapati Beans - $8</p><button>Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="drinks">
+    <h2>Drinks</h2>
+    <div class="flex">
+      <div class="drink-item">
+        <img src="juice.jpg"><p>Juice - $3</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="soda.jpg"><p>Soda - $2</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="tea.jpg"><p>Tea - $1.5</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="coffee.jpg"><p>Coffee - $2.5</p><button>Buy</button>
+      </div>
+      <div class="drink-item">
+        <img src="beer.jpg"><p>Beer - $4</p><button>Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="guests">
+    <h2>Guest Records</h2>
+    <ul>
+      <li>John Doe - Room 101</li>
+      <li>Mary Wanjiku - Room 204</li>
+      <li>Ali Musa - Room 305</li>
+      <li>Grace Kimani - Room 106</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@zanihotel.com</p>
+    <p>Phone: +254 712 345 678</p>
+    <p>Thank you for visiting our hotel!</p>
+    <div class="flex">
+      <img src="res.jpeg">
+      <img src="swimming.jpeg">
+      <img src="view.jpeg">
+    </div>
+  </section>
+
+</body>
+</html>
